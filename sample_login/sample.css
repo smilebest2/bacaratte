@@ -1,0 +1,7 @@
+article,aside,canvas,details,figcaption,figure,
+header,footer,main,menu,nav,section,summary {
+  display: block;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+}

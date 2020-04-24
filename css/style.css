@@ -1,0 +1,100 @@
+﻿@charset "utf-8";
+/******** ID **********/
+#wrapper {
+	width: 1000px;
+	margin: 0px auto 0px auto;
+	text-align: justify;
+	background-color: #faf0e6;	/*linen*/
+}
+#header {
+	width: 1000px;
+	height: 56px;
+	margin: 0px;
+	padding: 0px;
+	background-image: url("../index/img/header_jms.png") ;
+	background-repeat: no-repeat;
+	background-color: #fffaf0;
+}
+#middle {
+	height: auto;
+	margin: 20px 0px;
+	text-align: justify;
+}
+#center {
+	margin: 20px 20px 0px 20px;
+}
+#footer{
+	width: 1000px;
+	margin: 0px auto 0px auto;
+	background: #000;
+	color: #fff;
+/*	margin-top: 45px; */
+	text-align: center;
+}
+
+#footer p#copyright{
+	text-align: center;
+	padding: 8px;
+	font-family:"lucida grande", tahoma, verdana, arial, sans-serif!important;
+}
+
+/******** tag ********/
+table, td, th {
+	border-color: #c0c0c0; /*	IE用(これがないとIEではボーダーが白色になる)	*/
+	border-collapse: collapse;
+	border: 2px;
+}
+table {
+	font-size: 90%;
+	margin: 0 auto;
+
+}
+th {
+	border: 2px darkgray solid;
+	padding: 4px;
+	color: #020202;
+	background-color: #d3d3d3;	/*lightgray*/
+	text-align: center;
+
+}
+td {
+	border: 2px darkgray solid;
+	padding: 3px;
+	color: #222;
+
+}
+
+/******** class ********/
+/* header */
+.headerTitle {
+	font-size: x-large;
+	margin: 0px;
+	padding: 10px;
+}
+/* table settings */
+.tblMargin {
+	margin: 10px auto 10px auto;
+}
+.btn {
+  width:300px;
+  color:#ffffff;
+  background:#337fcc;
+  font-size:28px;
+  font-weight:bold;
+  text-shadow:0 -1px 0px #225588,0 -2px 0px #225588;
+  text-align:center;
+  display:block;
+  text-decoration:none;
+  border:1px solid #225588;
+  padding:12px 0 8px 0;
+  border-radius:5px;
+  background:-moz-linear-gradient(rgba(34,85,136,0.5), rgba(34,85,136,1));
+  background:-webkit-gradient(linear, 100% 0%, 100% 100%, from(rgba(34,85,136,0.5)), to(rgba(34,85,136,1)));
+  box-shadow:1px 2px 2px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.5) inset, 0px -1px 0px rgba(255,255,255,0.2) inset;
+}
+.border {
+  border: 2px #20b2aa solid;
+}
+.border th,border td{
+  border: 2px #20b2aa solid;
+}

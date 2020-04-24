@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<style type="text/css">
+ <!--
+body
+        {
+         margin:0px;
+         padding:0px;
+        }
+#wrapper{
+     width: 960px;
+     margin: 0 auto;
+}
+#logo
+        {
+         width:100%;
+         height:50px;
+         background-color:#cc6600;
+         text-align: center;
+         font-size: 100%;
+        }
+#tbl_space
+        {
+         width:100%;
+         height:200px;
+         background-color:#cc6600;
+        }
+
+table , td, th {
+	border: 1px solid #595959;
+	border-collapse: collapse;
+	background-color: #ffffff;
+	margin-left: auto;
+	margin-right: auto;
+}
+td, th {
+	padding: 3px;
+	width: 20px;
+	height: 15px;
+	font-size: 50%;
+}
+th {
+	background: #f0e6cc;
+}
+.even {
+	background: #fbf8f0;
+}
+.odd {
+	background: #fefcf9;
+}
+
+
+ -->
+</style>
+<title>Baccarat</title>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+ //変数の設定-----------------------------------
+
+   var setSecond = 10; //タイマーの秒数
+   var setPause = setSecond; //ストップ時の秒数を保存する変数　初期値はsetSecondと同じ数値
+   var time = setSecond;   //残り秒数を保存する変数　初期値はsetSecondと同じ数値
+   var timerID;    //setInterval用の変数
+
+
+   //関数の設定-----------------------------------
+
+
+   //カウントを1減らす関数（setIntervalで毎秒実行される関数）
+	function countDown(){
+      time--;  //残り秒数を1減らす
+      setPause = time;  //setPauseに残り秒数を代入（ストップ時に使用するため）
+	}
+
+   //タイマー（setInterval）の停止用関数
+	function countStop(){
+      clearInterval(timerID); //（setInterval）をクリアー
+	}
+
+   //タイマースタートの関数
+	function timerStart(){
+      countStop();   //カウントダウンの重複を防ぐために今動いているタイマーをクリアーする ※1
+		timerID = setInterval(function(){
+         if(time <= 0) {
+            //残り秒数が0以下になったらタイマー（setInterval）をクリアー
+            clearInterval(timerID);
+            window.location.href = "/table_list.html";
+         } else {
+            //残り秒数が1以上あれば1減らす
+			   countDown();
+         }
+
+		}, 1000);   //1000ミリ秒（1秒）毎にsetInterval内の処理を繰り返す
+	};
+
+	 //実行処理-----------------------------------
+   timerStart();
+</script>
+
+</head>
+<body>
+<form action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="post">
+<div id="wrapper">
+<div id="logo">Table list</div></br>
+	<div id="tbl_space">Table NO.1
+		<a href="trump.php?no=1">
+		<table>
+			<tbody>
+				<?php
+				for($i=0;$i<6;$i++){
+					echo "<tr>";
+
+
+						for($ck_count=0;$ck_count<35;$ck_count++){
+							$pic = $edit_rst[1][$ck_count][$i];
+							echo "<td><img src= 'card_pic/$pic.gif' ></td>";
+						}
+
+					echo "</tr>";
+				}
+				?>
+			</tbody>
+		</table>
+		</a>
+	</div>
+	</br></br>
+	<div id="tbl_space">Table NO.2
+	<a href="trump.php?no=2">
+	<table>
+		<tbody>
+			<?php
+			for($i=0;$i<6;$i++){
+				echo "<tr>";
+
+
+					for($ck_count=0;$ck_count<35;$ck_count++){
+						$pic = $edit_rst[2][$ck_count][$i];
+						echo "<td><img src= 'card_pic/$pic.gif' ></td>";
+					}
+
+				echo "</tr>";
+			}
+			?>
+		</tbody>
+	</table>
+	</a>
+	</div>
+	</br></br>
+	<div id="tbl_space">Table NO.3
+	<a href="trump.php?no=3">
+	<table>
+		<tbody>
+			<?php
+			for($i=0;$i<6;$i++){
+				echo "<tr>";
+					for($ck_count=0;$ck_count<35;$ck_count++){
+						$pic = $edit_rst[3][$ck_count][$i];
+						echo "<td><img src= 'card_pic/$pic.gif' ></td>";
+					}
+
+				echo "</tr>";
+			}
+			?>
+		</tbody>
+	</table>
+	</a>
+	</div>
+	</br></br>
+	<div id="tbl_space">Table NO.4
+	<a href="trump.php?no=4">
+	<table>
+		<tbody>
+			<?php
+			for($i=0;$i<6;$i++){
+				echo "<tr>";
+					for($ck_count=0;$ck_count<35;$ck_count++){
+						$pic = $edit_rst[4][$ck_count][$i];
+						echo "<td><img src= 'card_pic/$pic.gif' ></td>";
+					}
+
+				echo "</tr>";
+			}
+			?>
+		</tbody>
+	</table>
+	</a>
+	</br></br>
+	</div>
+</div>
+
+</form>
+</body>
+</html>
